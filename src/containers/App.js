@@ -3,13 +3,23 @@ import uuid from 'uuid';
 import style from './App.css';
 
 import Title from '../components/Title';
+import TodoList from '../components/TodoList';
 
 class App extends React.Component {
     //Deklaracja stanu
     constructor(props){
         super(props);
         this.state = {
-            data: []
+            data: [{
+                id: 1,
+                    text: 'clean room'
+                }, {
+                id: 2,
+                    text: 'wash the dishes'
+                }, {
+                id: 3,
+                    text: 'feed my cat'
+            }]
         };
     }
     
@@ -35,7 +45,10 @@ class App extends React.Component {
         return (
             <div className={style.TodoApp}>
                 <Title data = { data }/>
-                Tutaj pojawią się komponenty naszej aplikacji.
+                <TodoList 
+                    data = { data }
+                    onClick = {(id) => this.removeTodo(id)} 
+                />
             </div>
         );
     }
