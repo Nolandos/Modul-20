@@ -1,6 +1,7 @@
 import React from 'react';
 import uuid from 'uuid';
 import style from './App.css';
+import { hot } from 'react-hot-loader';
 
 import Title from '../components/Title';
 import TodoList from '../components/TodoList';
@@ -9,15 +10,18 @@ class App extends React.Component {
     //Deklaracja stanu
     state = {
             data: [{
-                id: 1,
+                    id: 1,
                     text: 'clean room'
                 }, {
-                id: 2,
+                    id: 2,
                     text: 'wash the dishes'
                 }, {
-                id: 3,
+                    id: 3,
                     text: 'feed my cat'
-            }]
+            	}, {
+                    id: 4,
+                    text: 'go run'
+                }]
         };
     
     //Dodawanie taska
@@ -52,4 +56,4 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default hot(module)(App);
