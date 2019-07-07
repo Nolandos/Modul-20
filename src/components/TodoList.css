@@ -1,0 +1,35 @@
+.TodoList {
+    display: flex;
+    width: 500px;
+    list-style-type: none;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.TodoList >li {
+    border: 2px solid gray;
+    display: flex;
+    padding: 15px 25px;
+    justify-content: space-around;
+    align-items: center;
+    width: 350px;
+    height: 150px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.buttonDel {
+    background-color: red;
+    border: none;
+    outline: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #fff;  
+    cursor: pointer;  
+}
+
+.buttonDel:hover {
+    color: blueviolet;
+}

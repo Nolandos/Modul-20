@@ -7,9 +7,7 @@ import TodoList from '../components/TodoList';
 
 class App extends React.Component {
     //Deklaracja stanu
-    constructor(props){
-        super(props);
-        this.state = {
+    state = {
             data: [{
                 id: 1,
                     text: 'clean room'
@@ -21,23 +19,22 @@ class App extends React.Component {
                     text: 'feed my cat'
             }]
         };
-    }
     
     //Dodawanie taska
-    addTodo(val){
+    addTodo = val => {
         const todo = {
             text: val,
-            id: uuid.v4(),
+            id: uuid.v4()
         };
         const data = [...this.state.data, todo];
-        this.setState({data});
-    }
+        this.setState({ data });
+  };
 
-    //Usuwanie taska
-    removeTodo(id) {
-        const remainder = this.state.data.filter(todo => todo.id !== id);
-        this.setState({data: remainder});
-    }
+  //Usuwanie taska
+  removeTodo = id => {
+    const remainder = this.state.data.filter(todo => todo.id !== id);
+    this.setState({ data: remainder });
+  };
 
     //Render aplikacji 
     render() {
@@ -46,8 +43,9 @@ class App extends React.Component {
             <div className={style.TodoApp}>
                 <Title data = { data }/>
                 <TodoList 
+                    key = {data.id}
                     data = { data }
-                    onClick = {(id) => this.removeTodo(id)} 
+                    removeTodo={this.removeTodo}
                 />
             </div>
         );

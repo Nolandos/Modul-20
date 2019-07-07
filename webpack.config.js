@@ -29,10 +29,7 @@ module.exports = (env) => {
             rules: [
                 {
                     test: /\.js$/,
-                    loader: "babel-loader",
-                    options: {
-                        presets: ['env', 'react']
-                }
+                    loader: "babel-loader"
                 },
                 {
                     test: /\.css$/,
